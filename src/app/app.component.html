@@ -1,7 +1,14 @@
 <div class="chart-container flex flex-col items-center pt-8 pb-16">
-  <h1 class="text-white font-bold text-[42px] mb-8">Expense Chart</h1>
-  <div class="chart-box h-full w-full sm:rounded-3xl sm:h-[535px] sm:w-[535px] bg-white flex flex-col items-center py-8">
-    <h2 class="text-2xl font-bold">Expenses</h2>
+  <h1 class="text-white font-normal text-[42px] mb-8 leading-none">Expense Chart</h1>
+  <div
+    class="chart-box h-full w-full sm:rounded-3xl sm:h-[535px] sm:w-[535px] bg-white flex flex-col items-center py-8"
+  >
+    <h2 class="text-2xl font-normal">Expenses</h2>
+    <app-expense-tab></app-expense-tab>
+    <app-expense-pie-chart></app-expense-pie-chart>
+    <div>
+      <app-expense-type></app-expense-type>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>
