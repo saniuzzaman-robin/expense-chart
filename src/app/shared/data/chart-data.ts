@@ -1,6 +1,6 @@
-import { ChartItem } from '../models/shared.model';
+import { ChartItem, ExpenseType } from '../models/shared.model';
 
-const chartData: ChartItem[] = [
+export const ChartData: ChartItem[] = [
   {
     period: '1M',
     personal: 150,
@@ -28,5 +28,24 @@ const chartData: ChartItem[] = [
     shopping: 1420,
     phone: 1265,
     other: 1000,
+  },
+];
+
+export const ExpenseTypes: ExpenseType[] = [
+  {
+    colorCode: '#4C49ED',
+    name: 'Personal',
+  },
+  {
+    colorCode: '#9D9BF4',
+    name: 'Shopping',
+  },
+  {
+    colorCode: '#4FD18B',
+    name: 'Phone',
+  },
+  {
+    colorCode: '#141197',
+    name: 'Other',
   },
 ];

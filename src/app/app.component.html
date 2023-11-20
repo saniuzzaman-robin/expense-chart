@@ -6,8 +6,10 @@
     <h2 class="text-2xl font-normal">Expenses</h2>
     <app-expense-tab></app-expense-tab>
     <app-expense-pie-chart></app-expense-pie-chart>
-    <div>
-      <app-expense-type></app-expense-type>
+    <div class="mt-12 flex gap-6 flex-wrap items-center justify-center px-6 sm:px-2">
+      @for (type of expenseTypes; track $index) {
+        <app-expense-type [colorCode]="type.colorCode" [name]="type.name"></app-expense-type>
+      }
     </div>
   </div>
 </div>

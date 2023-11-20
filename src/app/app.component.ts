@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { ExpenseTabComponent } from "./shared/components/expense-tab/expense-tab.component";
 import { ExpensePieChartComponent } from "./shared/components/expense-pie-chart/expense-pie-chart.component";
 import { ExpenseTypeComponent } from "./shared/components/expense-type/expense-type.component";
+import { ExpenseTypes } from './shared/data/chart-data';
 
 @Component({
     selector: 'app-root',
@@ -14,4 +15,5 @@ import { ExpenseTypeComponent } from "./shared/components/expense-type/expense-t
 })
 export class AppComponent {
   title = 'expense-chart';
+  expenseTypes = ExpenseTypes;
 }

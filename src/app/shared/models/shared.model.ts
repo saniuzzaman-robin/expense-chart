@@ -5,3 +5,7 @@ export type ChartItem = {
   phone: number;
   other: number;
 };
+export type ExpenseType = {
+  colorCode: string;
+  name: string;
+};

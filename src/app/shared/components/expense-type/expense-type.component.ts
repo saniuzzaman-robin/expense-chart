@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,8 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './expense-type.component.html',
-  styleUrl: './expense-type.component.scss'
+  styleUrl: './expense-type.component.scss',
 })
 export class ExpenseTypeComponent {
-
+  @Input() colorCode: any = '';
+  @Input() name: any = '';
 }
