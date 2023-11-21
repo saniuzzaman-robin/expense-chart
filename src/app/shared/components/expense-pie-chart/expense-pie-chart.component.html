@@ -1,8 +1,8 @@
 <div class="piechart" [ngStyle]="{ 'background-image': conicGradient }">
   <div
-    class="rounded-full bg-white w-[80%] h-[80%] flex items-center justify-center font-extrabold text-4xl"
+    class="rounded-full bg-white w-[80%] h-[80%] flex items-center justify-center font-normal text-[40px]"
   >
-    $ {{ totalAmountInt
+    $ {{ totalAmountInt | localeString
     }}<span class="text-lg text-[#AFADFE] flex items-end pt-3"
       >.{{ totalAmountDes }}</span
     >

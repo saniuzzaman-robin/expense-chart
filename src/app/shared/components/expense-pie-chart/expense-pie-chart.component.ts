@@ -2,13 +2,14 @@ import { ChartData } from './../../data/chart-data';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartItem, PieChartPercent } from '../../models/shared.model';
+import { LocaleStringPipe } from "../../pipes/to-locale-string.pipe";
 
 @Component({
-  selector: 'app-expense-pie-chart',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './expense-pie-chart.component.html',
-  styleUrl: './expense-pie-chart.component.scss',
+    selector: 'app-expense-pie-chart',
+    standalone: true,
+    templateUrl: './expense-pie-chart.component.html',
+    styleUrl: './expense-pie-chart.component.scss',
+    imports: [CommonModule, LocaleStringPipe]
 })
 export class ExpensePieChartComponent implements OnInit, OnChanges {
   @Input() tabData: ChartItem = ChartData[0];
@@ -23,7 +24,6 @@ export class ExpensePieChartComponent implements OnInit, OnChanges {
     Other: 0,
   };
   ngOnInit(): void {
-    console.log(this.tabData);
     this.updateChartData();
   }
   ngOnChanges(): void {
