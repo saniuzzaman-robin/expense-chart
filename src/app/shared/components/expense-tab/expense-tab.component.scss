@@ -1,0 +1,21 @@
+.tabs-container {
+  display: flex;
+  background: #f5f6fa;
+  border-radius: 30px;
+  padding: 12px 32px;
+  gap: 22px;
+}
+.tab-btn {
+  color: #373b47;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.84px;
+  padding: 8px 10px;
+}
+.tab-btn.active {
+  color: #003eff;
+  background: white;
+  border-radius: 16px;
+}

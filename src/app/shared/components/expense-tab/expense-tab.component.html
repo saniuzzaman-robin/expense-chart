@@ -1,1 +1,5 @@
-<div class="h-8"></div>
+<div class="tabs-container">
+    @for (tab of filterPeriodTabs; track $index) {
+        <button (click)="changeFilter(tab)" class="tab-btn uppercase text-base font-normal" [ngClass]="{'active': activeTabName==tab}">{{tab}}</button>
+    }
+</div>

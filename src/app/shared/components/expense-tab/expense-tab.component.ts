@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,8 +6,17 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './expense-tab.component.html',
-  styleUrl: './expense-tab.component.scss'
+  styleUrl: './expense-tab.component.scss',
 })
-export class ExpenseTabComponent {
-
+export class ExpenseTabComponent implements OnInit {
+  @Input() filterPeriodTabs: any[] = [];
+  @Output() selectedTabChange = new EventEmitter<string>();
+  activeTabName: string = '';
+  ngOnInit() {
+    this.activeTabName = this.filterPeriodTabs[0];
+  }
+  changeFilter(tabName: string): void {
+    this.activeTabName = tabName;
+    this.selectedTabChange.emit(tabName);
+  }
 }
