@@ -1,5 +1,10 @@
-<div class="piechart">
-    <div class="rounded-full bg-white w-[80%] h-[80%] flex items-center justify-center font-extrabold text-4xl">
-        $ 5,485<span class="text-lg text-[#AFADFE] flex items-end pt-3">.00</span>
-    </div>
-</div> 
+<div class="piechart" [ngStyle]="{ 'background-image': conicGradient }">
+  <div
+    class="rounded-full bg-white w-[80%] h-[80%] flex items-center justify-center font-extrabold text-4xl"
+  >
+    $ {{ totalAmountInt
+    }}<span class="text-lg text-[#AFADFE] flex items-end pt-3"
+      >.{{ totalAmountDes }}</span
+    >
+  </div>
+</div>

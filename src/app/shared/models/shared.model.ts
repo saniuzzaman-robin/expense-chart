@@ -9,3 +9,9 @@ export type ExpenseType = {
   colorCode: string;
   name: string;
 };
+export type PieChartPercent = {
+  Personal: number;
+  Shopping: number;
+  Phone: number;
+  Other: number;
+}

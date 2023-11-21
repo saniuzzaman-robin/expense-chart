@@ -25,7 +25,7 @@ export const ChartData: ChartItem[] = [
   {
     period: 'ALL TIME',
     personal: 1800,
-    shopping: 1420,
+    shopping: 1421,
     phone: 1265,
     other: 1000,
   },

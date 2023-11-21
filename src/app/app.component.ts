@@ -35,6 +35,5 @@ export class AppComponent implements OnInit {
     this.selectedTabData =
       this.chartData.find((item) => item.period === tabName) ??
       this.selectedTabData;
-      console.log(this.selectedTabData);
   }
 }

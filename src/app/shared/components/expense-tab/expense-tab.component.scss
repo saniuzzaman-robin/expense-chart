@@ -6,6 +6,7 @@
   gap: 22px;
 }
 .tab-btn {
+  border-radius: 16px;
   color: #373b47;
   font-size: 12px;
   font-style: normal;
@@ -13,9 +14,24 @@
   line-height: 16px;
   letter-spacing: 0.84px;
   padding: 8px 10px;
+  -webkit-tap-highlight-color: transparent; /* Disable the tap highlight color on iOS */
+  touch-action: manipulation;
+  transition: background-color 0.6s ease;
+}
+@supports (-webkit-touch-callout: none) {
+  .tab-btn {
+    -webkit-tap-highlight-color: transparent; /* Disable the tap highlight color on Android */
+    touch-action: manipulation; /* Disable double-tap-to-zoom on Android */
+  }
+}
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.771);
+  border-radius: 16px;
 }
 .tab-btn.active {
   color: #003eff;
   background: white;
   border-radius: 16px;
+  transition: background-color 0.6s ease;
+  transition: color 0.3s ease;
 }
