@@ -1,9 +1,12 @@
 <div class="piechart" [ngStyle]="{ 'background-image': conicGradient }">
   <div
-    class="rounded-full bg-white w-[80%] h-[80%] flex items-center justify-center font-normal text-[40px]"
+    class="rounded-full bg-white w-[80%] h-[80%] flex items-center justify-center font-normal"
+    [ngStyle]="{ 'font-size': totalAmountIntFontSize }"
   >
     $ {{ totalAmountInt | localeString
-    }}<span class="text-lg text-[#AFADFE] flex items-end pt-3"
+    }}<span
+      class="text-[#AFADFE] flex items-end"
+      [ngStyle]="{ 'font-size': totalAmountDesFontSize , 'padding-top': totalAmountDesPadding}"
       >.{{ totalAmountDes }}</span
     >
   </div>

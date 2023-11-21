@@ -2,14 +2,14 @@ import { ChartData } from './../../data/chart-data';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartItem, PieChartPercent } from '../../models/shared.model';
-import { LocaleStringPipe } from "../../pipes/to-locale-string.pipe";
+import { LocaleStringPipe } from '../../pipes/to-locale-string.pipe';
 
 @Component({
-    selector: 'app-expense-pie-chart',
-    standalone: true,
-    templateUrl: './expense-pie-chart.component.html',
-    styleUrl: './expense-pie-chart.component.scss',
-    imports: [CommonModule, LocaleStringPipe]
+  selector: 'app-expense-pie-chart',
+  standalone: true,
+  templateUrl: './expense-pie-chart.component.html',
+  styleUrl: './expense-pie-chart.component.scss',
+  imports: [CommonModule, LocaleStringPipe],
 })
 export class ExpensePieChartComponent implements OnInit, OnChanges {
   @Input() tabData: ChartItem = ChartData[0];
@@ -17,6 +17,9 @@ export class ExpensePieChartComponent implements OnInit, OnChanges {
   totalAmountDes: string = '0';
   toalPieAmount: number = 360;
   conicGradient: any;
+  totalAmountIntFontSize: string = '40px';
+  totalAmountDesFontSize: string = '18px';
+  totalAmountDesPadding: string = '16px';
   shares: PieChartPercent = {
     Personal: 0,
     Shopping: 0,
@@ -44,6 +47,7 @@ export class ExpensePieChartComponent implements OnInit, OnChanges {
     this.shares.Shopping = this.calculatePercentage(this.tabData.shopping);
     this.shares.Other = this.calculatePercentage(this.tabData.other);
     this.updateConicGradientColor();
+    this.updateFontSizeForTotalAmount();
   }
   calculatePercentage(share: number): number {
     return parseInt(((share / this.toalPieAmount) * 360).toFixed(0));
@@ -57,5 +61,28 @@ export class ExpensePieChartComponent implements OnInit, OnChanges {
       }deg, 
       #9D9BF4 0 360deg
       )`;
+  }
+  updateFontSizeForTotalAmount(): void {
+    switch (true) {
+      case this.totalAmountInt.length <= 5:
+        this.totalAmountIntFontSize = '40px';
+        this.totalAmountDesFontSize = '18px';
+        this.totalAmountDesPadding = '16px';
+        break;
+      case this.totalAmountInt.length > 5 && this.totalAmountInt.length <= 10:
+        this.totalAmountIntFontSize = '24px';
+        this.totalAmountDesFontSize = '14px';
+        this.totalAmountDesPadding = '4px';
+        break;
+      case this.totalAmountInt.length > 10 && this.totalAmountInt.length <= 15:
+        this.totalAmountIntFontSize = '18px';
+        this.totalAmountDesFontSize = '12px';
+        this.totalAmountDesPadding = '4px';
+        break;
+      default:
+        this.totalAmountIntFontSize = '14px';
+        this.totalAmountDesFontSize = '10px';
+        this.totalAmountDesPadding = '2px';
+    }
   }
 }
